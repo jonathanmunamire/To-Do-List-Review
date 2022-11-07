@@ -1,14 +1,30 @@
-import _ from 'lodash';
 import './style.css';
+import Tasks from './modules/tasks.js';
+import Action from './modules/action.js';
+import dragDrop from './modules/drag.js';
 
+const tasks = new Tasks();
+const action = new Action();
 
-function component() {
-    const element = document.createElement('div');
+// populate the todo list from storage
+tasks.populateList();
 
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
-  
-    return element;
+// add new task
+const newInput = document.querySelector('#new-task');
+newInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter' && newInput.value) {
+    tasks.add(newInput.value);
+    newInput.value = '';
   }
-  
-  document.body.appendChild(component());
+});
+
+// refresh the list
+const refreshBtn = document.querySelector('#refresh-list');
+refreshBtn.addEventListener('click', () => {
+  document.location.reload();
+});
+
+// clear
+dragDrop(document.querySelectorAll('.todo-task'));
+// tasks.populateList();
+action.clearCompleted(tasks);

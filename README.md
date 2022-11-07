@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# WebPack
+# To-Do-List-Review
 
-> Project to Display List of Books
+> Project for Peer-to-Peer Review
 
 ## Built With
 
@@ -23,7 +23,7 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
     Clone this repository
-    git clone https://github.com/jonathanmunamire/Webpack.git
+    git clone https://github.com/jonathanmunamire/To-Do-List-Review.git
 
 ### Install
 
